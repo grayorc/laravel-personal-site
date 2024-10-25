@@ -13,18 +13,15 @@ class FeedbackController extends Controller
     return view ('pages.contact');
   }
   
-  public function create(Request $req){
+  public function create(Request $request){
 
-
-    $data = $req->validate([
+    $data = $request->validate([
       'subject' => 'required',
       'name' => 'required',
       'email' => 'required|email',
       'message' => 'required',
     ]);
-
     Contact::Create($data);
-
     return response()->json('success');
 
   }

@@ -1,11 +1,10 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\StorageController;
 use App\Models\BlogPost;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Response;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Route;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
 
 Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
@@ -24,16 +23,4 @@ Route::post('/contact', [\App\Http\Controllers\FeedbackController::class, 'creat
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{post}', [BlogController::class, 'single'])->name('blog.single');
 
-Route::get('/thumbnails/{filename}', function ($filename) {
-    $path = storage_path('app/public/thumbnails/' . $filename);
-    if (!File::exists($path)) {
-        abort(404);
-    }
-
-    $file = File::get($path);
-    $type = File::mimeType($path);
-
-    $response = Response::make($file, 200);
-    $response->header("Content-Type", $type);
-    return $response;
-});
+Route::get('/thumbnails/{filename}', [StorageController::class , 'thumbnails']);
