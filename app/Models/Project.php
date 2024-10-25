@@ -13,7 +13,7 @@ class Project extends Model
     /**
      * @var string[]
      */
-    protected $fillable = ['title', 'link', 'description', 'user_id'];
+    protected $fillable = ['title', 'link', 'description', 'user_id', 'thumbnail'];
 
     /**
      * @return BelongsTo

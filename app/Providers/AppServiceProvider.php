@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\SiteSetting;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
@@ -31,5 +32,6 @@ class AppServiceProvider extends ServiceProvider
         } catch (\Exception $e) {
             Log::error('Error occurred: ' . $e->getMessage(), ['exception' => $e]);
         }
+        Paginator::useBootstrap();
     }
 }

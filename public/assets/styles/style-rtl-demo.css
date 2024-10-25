@@ -1,6 +1,6 @@
 /* ------------------------------------------------
  Author: ArtStyles (Art)
- 
+
  Template Name: vCard 2
  version: 1.1.0
 ------------------------------------------------ */
@@ -28,7 +28,7 @@
  - Testimonials
  - Timeline
  - Other
- 
+
 ------------------------------------------------ */
 @import url(vendors/rtl/bootstrap.min.css);
 @import url(vendors/swiper.min.css);
@@ -44,6 +44,7 @@
   background-repeat: no-repeat;
   box-sizing: border-box;
 }
+
 
 html {
   font-size: 16px;
@@ -267,7 +268,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #44566C;
 }
 
-.block-quote {
+.block-quote , blockquote{
   font-size: 1.3125rem;
   font-weight: 400;
   margin: 1.8125rem 0 1.8125rem 0.1875rem;
@@ -275,19 +276,19 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.6;
 }
 @media only screen and (max-width: 991px) {
-  .block-quote {
+  .block-quote , blockquote{
     padding-left: 3.8125rem;
   }
 }
 @media only screen and (max-width: 768px) {
-  .block-quote {
+  .block-quote , blockquote{
     font-size: 1.125rem;
     margin: 1.0625rem 0 1.3125rem;
     padding-left: 0;
     padding-top: 2.375rem;
   }
 }
-.block-quote::before {
+.block-quote::before , blockquote::before {
   background-image: url(../images/icon-quote.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -301,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 28px;
 }
 @media only screen and (max-width: 991px) {
-  .block-quote::before {
+  .block-quote::before , blockquote::before {
     left: 0;
   }
 }

@@ -32,6 +32,10 @@ class ProjectResource extends Resource
                 Forms\Components\Textarea::make('description')
                     ->required()
                     ->rules(['required', 'string']),
+                Forms\Components\FileUpload::make('thumbnail')
+                    ->image()
+                    ->directory('thumbnails')
+                    ->rules(['nullable', 'image', 'max:2048']),
                 Forms\Components\Hidden::make('user_id')
                     ->default(auth()->id())
                     ->required()
@@ -52,6 +56,9 @@ class ProjectResource extends Resource
                 Tables\Columns\TextColumn::make('link')
                     ->url(fn($record) => $record->link ?? '')
                     ->label('Project Link'),
+                Tables\Columns\ImageColumn::make('thumbnail')
+                    ->label('Thumbnail')
+                    ->size(50),
                 Tables\Columns\TextColumn::make('user.name')
                     ->label('User Name')
                     ->sortable()

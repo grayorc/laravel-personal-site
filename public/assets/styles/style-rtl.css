@@ -1,7 +1,7 @@
 /* ------------------------------------------------
  Author: ArtStyles (Art)
- 
- Template Name: 
+
+ Template Name:
  version: 1.0.0
 ------------------------------------------------ */
 @import url("../font/inter.css");
@@ -80,26 +80,26 @@ body {
   right: 0;
 }
 
-.block-quote {
+.block-quote , blockquote{
   margin: 1.8125rem 0.1875rem 1.8125rem 0;
 }
 @media only screen and (max-width: 991px) {
-  .block-quote {
+  .block-quote , blockquote{
     padding-left: 0;
     padding-right: 3.8125rem;
   }
 }
 @media only screen and (max-width: 768px) {
-  .block-quote {
+  .block-quote , blockquote{
     padding-right: 0;
   }
 }
-.block-quote::before {
+.block-quote::before , blockquote::before {
   left: auto;
   right: -2.5625rem;
 }
 @media only screen and (max-width: 991px) {
-  .block-quote::before {
+  .block-quote::before , blockquote::before {
     left: auto;
     right: 0;
   }
@@ -413,3 +413,12 @@ body {
 }
 
 /*# sourceMappingURL=style-rtl.css.map */
+
+.custom-pagination-container{
+    display: flex;
+    margin-top: 2rem;
+}
+
+.custom-pagination-container nav{
+    margin:auto;
+}
