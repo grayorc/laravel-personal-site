@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title' , 'علیرضا وحدانی | به زودی ...')
+@section('title' , "{$settings->name} | به زودی ...")
 
 @section('content')
     <div class="content">

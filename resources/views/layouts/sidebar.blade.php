@@ -15,8 +15,8 @@
             </div>
         @endisset
         <div class="text-center">
-            <h1 class="title sidebar__user-name"><span class="weight--500">علیرضا وحدانی</span></h1>
-            <div class="badge badge--gray">بک اند دولوپر</div>
+            <h1 class="title sidebar__user-name"><span class="weight--500">{{$settings->name}}</span></h1>
+            <div class="badge badge--gray">{{$settings->getTitle()}}</div>
 
             <!-- Social -->
             <div class="social">

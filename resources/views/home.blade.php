@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title' , 'علیرضا وحدانی | بک اند دولوپر')
+@section('title' , "{$settings->name} | {$settings->getTitle()}")
 
 @section('description')
     یه آدم عاشق حل مسئله که تو دنیای وب غرق شده و از حل مشکلات ریز و درشتش کیف می‌کنه.

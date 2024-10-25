@@ -14,7 +14,7 @@ class SiteSetting extends Model
      * @var string[]
      */
     protected $fillable = [
-        'about_me', 'what_i_do', 'feedbacks_enabled', 'customers_enabled', 'profile_picture', 'social_media', 'address', 'email', 'telegram','user_id'
+        'name', 'about_me', 'what_i_do', 'feedbacks_enabled', 'customers_enabled', 'profile_picture', 'social_media', 'address', 'email', 'telegram', 'user_id'
     ];
 
     /**
@@ -55,5 +55,9 @@ class SiteSetting extends Model
                 }
             }
         });
+    }
+
+    public function getTitle(){
+        return $this->what_i_do[0]['title'];
     }
 }

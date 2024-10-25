@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title' , 'علیرضا وحدانی | رزومه')
+@section('title' , "{$settings->name} | رزومه")
 
 @section('description')
     این صفحه رزومه منه ، در کل در مورد تحصیلات ، تجربیات و مهارت هایی که دارم صحبت شده

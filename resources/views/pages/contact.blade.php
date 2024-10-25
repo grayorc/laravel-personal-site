@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title' , 'علیرضا وحدانی | ارتباط با من')
+@section('title' , "{$settings->name} | ارتباط با من")
 
 @section('description')
     صفحه ارتباط با من

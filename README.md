@@ -94,6 +94,7 @@ Table site_settings {
   id int [pk , increment]
   user_id int [ref: > users.id]
   profile string // save profile image in sidebar
+  name string
   aboute_me text
   social_media json // name , link , icon_class
   address string
