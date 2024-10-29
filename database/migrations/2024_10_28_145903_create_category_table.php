@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('site_settings', function (Blueprint $table) {
-            $table->string('name');
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->String('title');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('site_settings', function (Blueprint $table) {
-            $table->dropColumn('name');
-        });
+        Schema::dropIfExists('categories');
     }
 };

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\portfolio;
 use App\Http\Controllers\StorageController;
 use App\Models\BlogPost;
 use Illuminate\Support\Facades\Storage;
@@ -11,10 +12,7 @@ Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
 
 Route::get('/resume', \App\Http\Controllers\ResumeController::class)->name('resume.index');
 
-Route::get('/portfolio', function () {
-    // TODO Complete it
-    return view('pages.coming-soon');
-})->name('portfolio.index');
+Route::get('/portfolio', [Portfolio::class, 'index'])->name('portfolio.index');
 
 Route::get('/contact', \App\Http\Controllers\FeedbackController::class)->name('contact.index');
 

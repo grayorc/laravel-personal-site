@@ -20,7 +20,7 @@
                 <div class="news-item__image-wrap overlay overlay--45">
                     <div class="news-item__date">{{ verta($post->created_at)->format('d')}}<span>{{ verta($post->created_at)->formatword('M')}}</span></div>
                     <a class="news-item__link" href="{{ route('blog.single',$post->id)}}"></a>
-                    <img class="cover ls-is-cached lazyloaded" src="{{  url($post->thumbnail) }}" alt="">
+                    <img class="cover ls-is-cached lazyloaded lazyloaded" src="{{  url($post->thumbnail) }}" alt="">
                 </div>
                 <div class="news-item__caption">
                     <h3 class="title title--h3">{{$post->title}}</h3>
