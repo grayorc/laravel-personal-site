@@ -27,10 +27,6 @@ class SiteSettingResource extends Resource
                         ->required()
                         ->directory('profiles')
                         ->rules(['required', 'image', 'max:2048']),
-                    Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->label('Name')
-                    ->rules(['required', 'string', 'max:2048']),
                     Forms\Components\Textarea::make('about_me')
                         ->required()
                         ->label('About Me')

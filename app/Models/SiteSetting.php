@@ -60,4 +60,9 @@ class SiteSetting extends Model
     public function getTitle(){
         return $this->what_i_do[0]['title'];
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
