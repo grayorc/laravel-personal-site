@@ -14,13 +14,13 @@ class Experience extends Model
     /**
      * @var string[]
      */
-    protected $fillable = ['name', 'icon', 'experiences', 'user_id'];
+    protected $fillable = ['name', 'icon', 'items', 'user_id'];
 
     /**
      * @var string[]
      */
     protected $casts = [
-        'experiences' => 'array'
+        'items' => 'array'
     ];
 
     /**

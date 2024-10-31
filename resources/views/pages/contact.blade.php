@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title' , "{$settings->name} | ارتباط با من")
+@section('title' , "{$settings->user->name} | ارتباط با من")
 
 @section('description')
     صفحه ارتباط با من
@@ -18,7 +18,7 @@
 					<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1562849.29929252!2d127.13039999999998!3d40.087901!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1729341815007!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
 				<h2 class="title title--h2">فرم تماس</h2>
-							
+
 				<form id="contact-form" method="POST"  action="/contact" class="contact-form" data-toggle="validator">
 				@csrf
                     <div class="row">

@@ -23,23 +23,20 @@ class SkillResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('name')->required()->rules(['required', 'string', 'max:128']),
+                Forms\Components\Repeater::make('items')
+                    ->schema([
+                        Forms\Components\TextInput::make('name')->required()->rules(['required', 'string', 'max:128']),
+                        Forms\Components\Select::make('type')->options(['hard' => 'Hard', 'soft' => 'Soft'])->required()->rules(['required', 'in:hard,soft']),
+                        Forms\Components\TextInput::make('percentage_of_expertise')->type('number')->step(1)->required()->rules(['required', 'integer', 'between:0,100'])
+                    ])
                     ->required()
-                    ->rules(['required', 'string', 'max:128']),
-                Forms\Components\Select::make('type')
-                    ->options(['hard' => 'Hard', 'soft' => 'Soft'])
-                    ->required()
-                    ->rules(['required', 'in:hard,soft']),
-                Forms\Components\TextInput::make('percentage_of_expertise')
-                    ->type('number')
-                    ->step(1)
-                    ->required()
-                    ->rules(['required', 'integer', 'between:0,100']),
+                    ->label('Skills'),
                 Forms\Components\Hidden::make('user_id')
                     ->default(auth()->id())
                     ->required()
                     ->rules(['required', 'exists:users,id']),
-            ]);
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table

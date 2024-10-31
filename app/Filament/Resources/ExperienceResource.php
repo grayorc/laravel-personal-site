@@ -22,7 +22,11 @@ class ExperienceResource extends Resource
         return $form->schema([
             Forms\Components\TextInput::make('name')->required()->rules(['required', 'string', 'max:128']),
             Forms\Components\FileUpload::make('icon')->required()->directory('icons')->rules(['required', 'image', 'max:2048']),
-            Forms\Components\Repeater::make('experiences')
+            Forms\Components\Hidden::make('user_id')
+            ->default(auth()->id())
+            ->required()
+            ->rules(['required', 'exists:users,id']),
+            Forms\Components\Repeater::make('items')
                 ->schema([
                     Forms\Components\TextInput::make('name')->required()->rules(['required', 'string', 'max:128']),
                     Forms\Components\DatePicker::make('start_date')->maxDate(now())->required()->rules(['required', 'date']),

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title' , "{$settings->name} | وبلاگ")
+@section('title' , "{$settings->user->name} | وبلاگ")
 
 @section('description')
     این صفحه رزومه منه ، در کل در مورد تحصیلات ، تجربیات و مهارت هایی که دارم صحبت شده

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title' , "{$settings->name} | نمونه کارها")
+@section('title' , "{$settings->user->name} | نمونه کارها")
 
 @section('description')
     صفحه نمونه کارها
@@ -30,10 +30,10 @@
 					<div class="gutter-sizer"></div>
 					<!-- Item 1 -->
                     @foreach ($projects as $project)
-						@if ($project->category) 
-						<figure class="gallery-grid__item category-{{ $project->category->title }}" style="position: absolute; left: 0%; top: 0px;"> 
-						@else 
-						<figure class="gallery-grid__item category-unknown" style="position: absolute; left: 0%; top: 0px;"> 
+						@if ($project->category)
+						<figure class="gallery-grid__item category-{{ $project->category->title }}" style="position: absolute; left: 0%; top: 0px;">
+						@else
+						<figure class="gallery-grid__item category-unknown" style="position: absolute; left: 0%; top: 0px;">
 						@endif
 						<div class="gallery-grid__image-wrap">
                             <img class="gallery-grid__image cover medium-zoom-image ls-is-cached lazyloaded" src="{{ $project->thumbnail }}" data-zoom="" alt="">

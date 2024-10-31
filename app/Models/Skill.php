@@ -12,5 +12,14 @@ class Skill extends Model
     /**
      * @var string[]
      */
-    protected $fillable = ['name', 'skills', 'user_id'];
+    protected $fillable = ['name', 'skills', 'user_id','items'];
+
+    protected $casts = ['items' => 'array'];
+
+    protected $attributes = ['items' => '[]'];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
 }
