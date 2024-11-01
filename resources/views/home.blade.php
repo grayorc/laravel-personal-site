@@ -49,7 +49,7 @@
                             <div class="swiper-slide review-item">
                                 <svg class="avatar avatar--80" viewBox="0 0 84 84">
                                     <g class="avatar__hexagon">
-                                        <image xlink:href="{{ Storage::url('storage/' . $feedback->profile ?? '') }}" height="100%" width="100%"/>
+                                        <image xlink:href="{{ Storage::url($feedback->profile ?? '') }}" height="100%" width="100%"/>
                                     </g>
                                 </svg>
                                 <h4 class="title title--h3">{{ $feedback->name ?? '' }}</h4>
