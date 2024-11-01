@@ -4,7 +4,7 @@
             <div class="avatar-wrap">
                 <svg class="avatar avatar--180" viewBox="0 0 188 188">
                     <g class="avatar__box">
-                        <img
+                        <image
                             href="{{ asset('storage/' .  $settings->profile) }}"
                             height="100%"
                             width="100%"

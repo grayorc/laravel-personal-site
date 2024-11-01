@@ -14,7 +14,7 @@ class SiteSetting extends Model
      * @var string[]
      */
     protected $fillable = [
-        'about_me', 'what_i_do', 'feedbacks_enabled', 'customers_enabled', 'profile_picture', 'social_media', 'address', 'email', 'telegram', 'user_id'
+        'profile' ,'about_me', 'what_i_do', 'feedbacks_enabled', 'customers_enabled', 'social_media', 'address', 'email', 'telegram', 'user_id'
     ];
 
     /**
