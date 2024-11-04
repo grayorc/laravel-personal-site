@@ -19,14 +19,14 @@
                 تحصیلات
             </h2>
             <div class="timeline">
-                @forelse($resumes['education'] ?? [] as $educationLocation => $educationInformation)
+                @forelse($eds ?? [] as $ed)
                     <!-- Item -->
                     <article class="timeline__item">
-                        <h5 class="title title--h3 timeline__title">{{$educationLocation ?? ''}}</h5>
+                        <h5 class="title title--h3 timeline__title">{{$ed['name'] ?? ''}}</h5>
                         <span class="timeline__period">
-                            {{$educationInformation['startDate'] ?? ''}} — {{$educationInformation['endDate'] ?? ''}}
+                            {{$ed['start_date'] ?? ''}} — {{$ed['end_date'] ?? ''}}
                         </span>
-                        <p class="timeline__description">{{$educationInformation['description'] ?? ''}}</p>
+                        <p class="timeline__description">{{$ed['description'] ?? ''}}</p>
                     </article>
                 @empty
                     <h6>چیزی یافت نشد</h6>
@@ -40,18 +40,15 @@
                 تجربیات
             </h2>
             <div class="timeline">
-                @forelse($experiences as $experience)
-                    @foreach($experience->items as $exp)
-                        <!-- Item -->
-                        <article class="timeline__item">
-                            <h5 class="title title--h3 timeline__title">{{$exp['name'] ?? ''}}</h5>
-                            <span class="timeline__period">
-
-                            {{verta($exp['start_date'])->format('Y')}} — {{verta($exp['end_date'])->format('Y') ?? ''}}
+                @forelse($exs ?? [] as $ex)
+                    <!-- Item -->
+                    <article class="timeline__item">
+                        <h5 class="title title--h3 timeline__title">{{$ex['name'] ?? ''}}</h5>
+                        <span class="timeline__period">
+                            {{$ex['start_date'] ?? ''}} — {{$ex['end_date'] ?? ''}}
                         </span>
-                            <p class="timeline__description">{{$exp['description'] ?? ''}}</p>
-                        </article>
-                    @endforeach
+                        <p class="timeline__description">{{$ex['description'] ?? ''}}</p>
+                    </article>
                 @empty
                     <h6>چیزی یافت نشد</h6>
                 @endforelse

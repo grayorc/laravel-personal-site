@@ -20,6 +20,8 @@ class ResumeController extends Controller
         $skills = Skill::all();
         $hard_skills = [];
         $soft_skills = [];
+        $eds = [];
+        $exs = [];
 
         foreach ($skills as $skill) {
             foreach ($skill->items as $item) {
@@ -31,7 +33,17 @@ class ResumeController extends Controller
             }
         }
 
+        foreach ($experiences as $experience) {
+            foreach ($experience->items as $item) {
+                if ($item['type'] === "education") {
+                    $eds[] = $item;
+                } else {
+                    $exs[] = $item;
+                }
+            }
+        }
 
-        return view('pages.resume', compact('experiences', 'skills', 'hard_skills', 'soft_skills'));
+
+        return view('pages.resume', compact('experiences', 'skills', 'hard_skills', 'soft_skills', 'eds', 'exs'));
     }
 }

@@ -31,6 +31,7 @@ class ExperienceResource extends Resource
                     Forms\Components\TextInput::make('name')->required()->rules(['required', 'string', 'max:128']),
                     Forms\Components\DatePicker::make('start_date')->maxDate(now())->required()->rules(['required', 'date']),
                     Forms\Components\DatePicker::make('end_date')->rules(['nullable', 'date']),
+                    Forms\Components\Select::make('type')->options(['experience' => 'Experience', 'education' => 'Education'])->required()->rules(['required', 'in:experience,education']),
                     Forms\Components\Textarea::make('description')->rules(['nullable', 'max:512'])
                 ])
                 ->required()
