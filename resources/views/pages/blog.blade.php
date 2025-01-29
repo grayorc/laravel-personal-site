@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+
     <div class="content">
         <div class="section mt-0">
             <h1 class="title title--h1 title__separate"> وبلاگ</h1>

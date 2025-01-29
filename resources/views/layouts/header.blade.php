@@ -41,5 +41,31 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/style-rtl-demo.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/style-rtl.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('assets/demo/style-demo.css')}}"/>
+    <style>
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Add some space between form elements */
+        }
 
+        .comment-form .form-control {
+            margin-bottom: 10px; /* Add margin to the bottom of each input element */
+        }
+
+        .comment-form .btn {
+            align-self: flex-start; /* Align the button to the start of the form */
+        }
+
+        .dropdown.dropup {
+            align-self: flex-start; /* Align the dropdown to the start of the form */
+        }
+
+        .emoji-wrap {
+            display: flex;
+            flex-wrap: wrap; /* Arrange emojis in a flexible, wrapped layout */
+            gap: 5px; /* Add some space between emojis */
+        }
+
+
+    </style>
 </head>

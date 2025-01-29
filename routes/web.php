@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\portfolio;
 use App\Http\Controllers\StorageController;
 use App\Models\BlogPost;
@@ -22,3 +23,5 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{post}', [BlogController::class, 'single'])->name('blog.single');
 
 Route::get('/thumbnails/{filename}', [StorageController::class , 'thumbnails']);
+
+Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');

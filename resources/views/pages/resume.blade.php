@@ -11,8 +11,7 @@
         <div class="section mt-0">
             <h1 class="title title--h1 title__separate">رزومه</h1>
         </div>
-
-        <!-- Experience -->
+        @if($eds)
         <div class="section">
             <h2 class="title title--h2">
                 <img class="title-icon" src="{{asset('assets/icons/icon-education.svg')}}" alt="تحصیلات"/>
@@ -20,7 +19,6 @@
             </h2>
             <div class="timeline">
                 @forelse($eds ?? [] as $ed)
-                    <!-- Item -->
                     <article class="timeline__item">
                         <h5 class="title title--h3 timeline__title">{{$ed['name'] ?? ''}}</h5>
                         <span class="timeline__period">
@@ -33,7 +31,8 @@
                 @endforelse
             </div>
         </div>
-
+        @endif
+        @if($exs)
         <div class="section">
             <h2 class="title title--h2">
                 <img class="title-icon" src="{{asset('assets/icons/icon-experience.svg')}}" alt="تجربیات"/>
@@ -54,8 +53,8 @@
                 @endforelse
             </div>
         </div>
-
-        <!-- Hard Skills -->
+        @endif
+        @if($hard_skills)
         <div class="section">
             <h2 class="title title--h2">مهارت های سخت من</h2>
             <div class="box-gray">
@@ -77,11 +76,11 @@
                 @endforelse
             </div>
         </div>
+        @endif
 
-
-        <!-- Soft Skills -->
+        @if($soft_skills)
         <div class="section">
-            <h2 class="title title--h2">مهارت های سخت من</h2>
+            <h2 class="title title--h2">مهارت های نرم من</h2>
             <div class="box-gray">
                 @forelse($soft_skills as $soft_skill)
                     <!-- Progress -->
@@ -101,7 +100,7 @@
                 @endforelse
             </div>
         </div>
-
+        @endif
 
     </div><!-- Content End -->
 @endsection

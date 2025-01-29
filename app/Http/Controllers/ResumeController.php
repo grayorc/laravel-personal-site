@@ -32,7 +32,7 @@ class ResumeController extends Controller
                 }
             }
         }
-
+// separate
         foreach ($experiences as $experience) {
             foreach ($experience->items as $item) {
                 if ($item['type'] === "education") {

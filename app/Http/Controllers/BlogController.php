@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BlogPost;
 use Illuminate\Http\Request;
+use Morilog\Jalali\Jalalian;
 
 class BlogController extends Controller
 {
@@ -16,6 +17,7 @@ class BlogController extends Controller
     }
     public function single(BlogPost $post)
     {
+        $post->load('comments');
         return view('pages.single', compact('post'));
     }
 }
