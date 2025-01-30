@@ -13,7 +13,7 @@ Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
 
 Route::get('/resume', \App\Http\Controllers\ResumeController::class)->name('resume.index');
 
-Route::get('/portfolio', [Portfolio::class, 'index'])->name('portfolio.index');
+Route::get('/portfolio', [App\Http\Controllers\Portfolio::class, 'index'])->name('portfolio.index');
 
 Route::get('/contact', \App\Http\Controllers\FeedbackController::class)->name('contact.index');
 
