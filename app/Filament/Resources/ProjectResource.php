@@ -43,7 +43,7 @@ class ProjectResource extends Resource
                     ->rules(['required', 'exists:users,id']),
                 Forms\Components\Select::make('category_id')
                     ->label('Category')
-                    ->options(Category::all()->pluck('title', 'id')->toArray())
+                    ->options(\App\Models\Category::all()->pluck('title', 'id')->toArray())
                     ->searchable()
                     ->required()
                     ->rules(['required', 'exists:categories,id']),
