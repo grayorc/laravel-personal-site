@@ -27,7 +27,7 @@ class FeedbackController extends Controller
       $message = $request->input('message');
       $botToken = env('BOT_TOKEN');
       $chatId = env('CHAT_ID');
-      $text = "New contact form submission:\n\nName: $name\nEmail: $email\nMessage: $message";
+      $text = "یک فیدبک برای شما ثبت شد." . ":\n\nName: $name\nEmail: $email\nMessage: $message";
 
       $url = "https://api.telegram.org/bot{$botToken}/sendMessage";
 
