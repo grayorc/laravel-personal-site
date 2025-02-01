@@ -21,7 +21,9 @@ class FeedbackController extends Controller
       'email' => 'required|email',
       'message' => 'required',
     ]);
-
+      $name = $request->input('name');
+      $email = $request->input('email');
+      $message = $request->input('message');
       $botToken = env('BOT_TOKEN');
       $chatId = env('CHAT_ID');
       $text = "New contact form submission:\n\nName: $name\nEmail: $email\nMessage: $message";
