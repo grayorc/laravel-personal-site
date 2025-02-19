@@ -1,6 +1,6 @@
 ## my Personal Site : >
 
-visit : [alireza10up.ir](https://alireza10up.ir), [grayorc.ir](https://grayorc.ir)
+visit : [alireza10up.ir](https://alireza10up.ir), [resume.grayorc.ir](https://resume.grayorc.ir)
 
 ## Database Design (dbdiagarm)
 ```
